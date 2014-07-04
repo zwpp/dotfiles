@@ -18,8 +18,6 @@ setopt NO_beep
 # $TERM偽装。フルカラー化。fxxkin gterm
 if [ $TERM = "xterm" ] ; then
     export TERM="xterm-256color"
-  else
-    export LANG="C"
 fi
 # $LANG設定
 if [ $TERM = "linux" ] ; then
