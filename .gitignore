@@ -1,4 +1,5 @@
 .vim/swp/*
+.vim/backup/*
 .vim/bundle/*
 .vim/colors/*
 
