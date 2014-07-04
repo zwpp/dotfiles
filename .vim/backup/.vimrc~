@@ -1,0 +1,20 @@
+source ~/.vundle_vimrc "to use https://github.com/gmarik/Vundle.vim
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
+syntax on
+set number
+set nocompatible
+set notimeout
+set ttimeout
+set timeoutlen=100
+set encoding=utf-8
+set fileencodings=ucs-bom,iso-2022-jp,utf-8,cp932,euc-jp,default,latin,iso-8851
+set shiftwidth=4
+set tabstop=4
+colorscheme railscasts
+set list
+set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set backup
+set backupdir=$HOME/.vim/backup
+"set directory=$HOME/.vim/swp
+

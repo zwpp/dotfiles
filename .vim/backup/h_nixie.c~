@@ -1,0 +1,54 @@
+#include <avr/io.h>
+#include <avr/pgmspace.h>
+#include "deprecated.h"
+#include "string.h"
+#include "SC_defin.h"
+#include "sc_strct.h"
+#include "SC_proto.h"
+#include "ch_defin.h"
+#include "CH_strct.h"
+#include "CH_proto.h"
+#include "ms_defin.h"
+#include "MS_strct.h"
+#include "tm_defin.h"
+#include "tm_strct.h"
+#include "tm_if.h"
+#include "ky_if.h"
+#include "RM_if.h"
+#include "UI_defin.h"
+#include "UI_strct.h"
+#include "UI_proto.h"
+
+
+void nix1(char n){		/* 100k */
+	unsigned char d;
+	d = PORTB;
+	d &= 0xf0;
+	d |= n;
+	PORTB = d ;
+}
+void nix2(char n){		/* 1M */
+	unsigned char d;
+	d = PORTB;
+	d &= 0x0f;
+	d |= (n << 4);
+	PORTB = d;
+}
+void nix3(char n){ 		/* 10M 7-9 */
+	unsigned char d;
+	d = ( n << 4);
+	d &= 0xf0;
+	PORTD = d;
+}
+
+void freq2nixie(void){
+	char n1, n2, n3;
+	unsigned char  freq = GUI_PRESET(DRM_E2P_LAST_FREQ) + 760;
+	n3 = freq / 100;
+	n2 = (freq - n3 * 100) / 10;
+	n1 = freq % 10;
+	nix3(n3);
+	nix2(n2);
+	nix1(n1);
+}
+
