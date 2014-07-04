@@ -5,3 +5,5 @@
 	spellingdictionary = en
 [github]
 	user = zwpp
+[core]
+	editor = vim -c \"set fenc=utf-8\"
