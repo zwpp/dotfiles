@@ -1,3 +1,4 @@
+# config:UTF-8
 # Created by newuser for 4.3.17
 
 ########コモンな設定########
