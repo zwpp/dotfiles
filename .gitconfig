@@ -3,6 +3,7 @@
 	email = chromelevan@yahoo.co.jp
 [gui]
 	spellingdictionary = en
+	encoding = utf-8
 [github]
 	user = zwpp
 [core]
