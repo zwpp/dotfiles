@@ -60,10 +60,4 @@ kterm*|xterm*)
 esac
 
 ########操作方法########
-#bindkey -v
-#autoload history-search-end
-#zle -N history-beginning-search-backward-end history-search-end
-#zle -N history-beginning-search-forward-end  history-search-end
-#bindkey "" history-beginning-search-backward-end
-#bindkey "" history-beginning-search-forward-end
 
