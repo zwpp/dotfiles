@@ -18,6 +18,10 @@ set tags=tags
 autocmd FileType c :set dictionary='~/.vim/dict/c.dict'
 set vb t_vb=
 set backspace=indent,eol,start
+set cursorline
+set cursorcolumn
+set ambiwidth=double
+
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
   set nocompatible               " Be iMproved
