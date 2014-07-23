@@ -7,8 +7,7 @@ alias ls="ls --color=auto"
 alias ll="ls -l"
 alias la="ls -a"
 alias vi="vim"
-alias make="make -j6"
-
+export MAKEFLAGS=-j6 $MAKEFLAGS
 #コマンド履歴
 HISTFILE=~/.history_zsh
 HISTSIZE=10000000
