@@ -19,7 +19,7 @@ autocmd FileType c :set dictionary='~/.vim/dict/c.dict'
 set vb t_vb=
 set backspace=indent,eol,start
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 set ambiwidth=double
 
 "NeoBundle Scripts-----------------------------
