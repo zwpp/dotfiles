@@ -2,12 +2,15 @@
 # Created by newuser for 4.3.17
 
 ########コモンな設定########
+#本体の設定
+setopt NO_beep
+#makeを加速させる。
+export MAKEFLAGS=-j6 $MAKEFLAGS
 #エイリアスたち
 alias ls="ls --color=auto"
 alias ll="ls -l"
 alias la="ls -a"
 alias vi="vim"
-export MAKEFLAGS=-j6 $MAKEFLAGS
 #コマンド履歴
 HISTFILE=~/.history_zsh
 HISTSIZE=10000000
@@ -16,7 +19,6 @@ setopt hist_ignore_dups
 
 setopt correct
 export LESS='-R'
-setopt NO_beep
 ########環境変数設定########
 # $TERM偽装。フルカラー化。fxxkin gterm
 if [ $TERM = "xterm" ] ; then
