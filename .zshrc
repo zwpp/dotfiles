@@ -4,8 +4,8 @@
 ########コモンな設定########
 #本体の設定
 setopt NO_beep
-#makeを加速させる。
-export MAKEFLAGS=-j6 $MAKEFLAGS
+#lessに色を付ける
+export LESS='-R'
 #エイリアスたち
 alias ls="ls --color=auto"
 alias ll="ls -l"
@@ -17,8 +17,19 @@ HISTSIZE=10000000
 SAVEHIST=$HISTSIZE
 setopt hist_ignore_dups
 
+zshaddhistory() {
+	local line=${1%%$'\n'}
+	local cmd=${line%% *}
+
+    # 以下の条件をすべて満たすものだけをヒストリに追加する
+	[[ ${cmd} != (l|l[sal])
+		&& ${cmd} != (c|cd)
+		&& ${cmd} != (m|man)
+		&& ${cmd} != (qrencode)
+	]]
+}
+
 setopt correct
-export LESS='-R'
 ########環境変数設定########
 # $TERM偽装。フルカラー化。fxxkin gterm
 if [ $TERM = "xterm" ] ; then
@@ -40,6 +51,9 @@ zstyle ':completion:*' group-name ''
 
 #sshホスト名補完
 _cache_hosts=(`ruby -ne 'if /^Host\s+(.+)$/; print $1.strip, "\n"; end' ~/.ssh/config`)
+#ユーザー補完関数置き場
+fpath=(~/.zsh/completion $fpath)
+
 #補完機能有効化
 autoload -U compinit
 compinit
@@ -64,4 +78,6 @@ kterm*|xterm*)
 esac
 
 ########操作方法########
+########  rvm   ########
+source /etc/profile.d/rvm.sh
 
