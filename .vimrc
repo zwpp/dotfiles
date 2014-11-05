@@ -48,6 +48,7 @@ NeoBundle 'mattn/webapi-vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neocomplete'
+NeoBundle 'sudo.vim'
 " You can specify revision/branch/tag.
 " NeoBundle Shougo/vimshell, { rev : 3787e5 }
 
@@ -78,6 +79,7 @@ let $DOTVIM = $HOME . '/.vim'
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'c' : $DOTVIM.'/dict/c.dict',
+    \ 'ruby' : $DOTVIM.'/dict/ruby.dict',
     \ }
 
 "NeoSnippet.Config----------------------------
@@ -100,6 +102,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+let s:my_snippet = '~/.vim/mysnippet/'
+let g:neosnippet#snippets_directory = s:my_snippet
 "StargateInclude.Config---------------------------
 NeoBundle 'osyo-manga/vim-stargate'
 let g:stargate#include_paths = {
@@ -107,4 +111,12 @@ let g:stargate#include_paths = {
 \			"/home/zw/ETrobo/nxtOSEK/ecrobot/c"
 \		]
 \}
+"Unite.config-------------------------------------
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
 
+"mikutter_mode------------------------------------
+NeoBundle '2GMon/mikutter_mode.vim'
+
+"Quickrun-----------------------------------------
+NeoBundle 'thinca/vim-quickrun'
