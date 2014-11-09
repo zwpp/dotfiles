@@ -1,27 +1,34 @@
+set nocompatible	"vi互換の排除
+"画面表示--------------------------------------
 syntax on	"色分け
 set number	"行番号
-set nocompatible	"vi互換の排除
+set shiftwidth=4
+set tabstop=4
+" colorscheme railscasts
+colorscheme molokai
+set list
+set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set cursorline
+set cursorcolumn
+set ambiwidth=double
+set showcmd
+set laststatus=2
+"検索------------------------------------------
+set incsearch
+set hlsearch
+"ファイル処理----------------------------------
+set encoding=utf-8
+set fileencodings=ucs-bom,iso-2022-jp,utf-8,cp932,euc-jp,default,latin,iso-8851
+"set backupdir=$HOME/.vim/backup
+set nobackup
+set directory=$HOME/.vim/swp
+"操作性----------------------------------------
 set notimeout
 set ttimeout
 set timeoutlen=100
-set encoding=utf-8
-set fileencodings=ucs-bom,iso-2022-jp,utf-8,cp932,euc-jp,default,latin,iso-8851
-set shiftwidth=4
-set tabstop=4
-colorscheme railscasts
-set list
-set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-set nobackup
-"set backupdir=$HOME/.vim/backup
-set directory=$HOME/.vim/swp
-set tags=tags
 autocmd FileType c :set dictionary='~/.vim/dict/c.dict'
 set vb t_vb=
 set backspace=indent,eol,start
-set cursorline
-"set cursorcolumn
-set ambiwidth=double
-
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
   set nocompatible               " Be iMproved
@@ -31,15 +38,13 @@ if has('vim_starting')
 endif
 
 " Required:
-call neobundle#begin(expand('/home/zw/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My NeoBundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
@@ -83,7 +88,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ }
 
 "NeoSnippet.Config----------------------------
-NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -120,3 +125,22 @@ NeoBundle '2GMon/mikutter_mode.vim'
 
 "Quickrun-----------------------------------------
 NeoBundle 'thinca/vim-quickrun'
+"lightline----------------------------------------
+NeoBundle 'itchyny/lightline.vim'
+let g:lightline = {
+\			'separator': { 'left': "\u2b80", 'right': "\u2b82" },
+\			'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
+\}
+"incsearch----------------------------------------
+NeoBundle 'haya14busa/incsearch.vim'
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
