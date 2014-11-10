@@ -78,6 +78,4 @@ kterm*|xterm*)
 esac
 
 ########操作方法########
-########  rvm   ########
-source /etc/profile.d/rvm.sh
 
