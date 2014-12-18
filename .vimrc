@@ -29,6 +29,8 @@ set timeoutlen=100
 autocmd FileType c :set dictionary='~/.vim/dict/c.dict'
 set vb t_vb=
 set backspace=indent,eol,start
+imap <F1> <Esc>
+map <F1> <Esc>
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
   set nocompatible               " Be iMproved
@@ -125,6 +127,9 @@ NeoBundle '2GMon/mikutter_mode.vim'
 
 "Quickrun-----------------------------------------
 NeoBundle 'thinca/vim-quickrun'
+let g:quickrun_config = {
+\   '*': {'runmode': 'async:remote:vimproc'},
+\ }
 "lightline----------------------------------------
 NeoBundle 'itchyny/lightline.vim'
 let g:lightline = {
@@ -143,4 +148,7 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+"vim-ruby-----------------------------------------
+NeoBundle 'vim-ruby/vim-ruby'
 
