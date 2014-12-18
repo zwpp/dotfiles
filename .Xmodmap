@@ -4,9 +4,9 @@ keysym Control_L = Caps_Lock
 keysym Caps_Lock = Control_L
 add Lock = Caps_Lock
 add Control = Control_L
+pointer = 1 9 3 4 5 6 7 8 2
 !keycode 125 = Super_L
 !keycode 163 = XF86AudioNext
 !keycode 164 = XF86AudioPlay
 !keycode 165 = XF86AudioPrev
 !keycode 166 = XF86AudioStop
-
