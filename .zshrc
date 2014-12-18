@@ -23,7 +23,7 @@ zshaddhistory() {
 
     # 以下の条件をすべて満たすものだけをヒストリに追加する
 	[[ ${cmd} != (l|l[sal])
-		&& ${cmd} != (c|cd)
+#		&& ${cmd} != (c|cd)
 		&& ${cmd} != (m|man)
 		&& ${cmd} != (qrencode)
 	]]
@@ -79,3 +79,5 @@ esac
 
 ########操作方法########
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
