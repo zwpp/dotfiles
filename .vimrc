@@ -162,4 +162,6 @@ map g# <Plug>(incsearch-nohl-g#)
 
 "vim-ruby-----------------------------------------
 NeoBundle 'vim-ruby/vim-ruby'
+"JP-doc-------------------------------------------
+NeoBundle 'vim-jp/vimdoc-ja'
 
