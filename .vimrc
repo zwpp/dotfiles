@@ -26,7 +26,6 @@ set directory=$HOME/.vim/swp
 set notimeout
 set ttimeout
 set timeoutlen=100
-autocmd FileType c :set dictionary='~/.vim/dict/c.dict'
 set vb t_vb=
 set backspace=indent,eol,start
 imap <F1> <Esc>
@@ -89,6 +88,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'ruby' : $DOTVIM.'/dict/ruby.dict',
     \ }
 
+autocmd FileType c set dictionary='~/.vim/dict/c.dict'
 "NeoSnippet.Config----------------------------
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
