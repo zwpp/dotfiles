@@ -97,6 +97,10 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 
 autocmd FileType c set dictionary='~/.vim/dict/c.dict'
 autocmd FileType c set omnifunc=ccomplete#Complete
+
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
 "NeoSnippet.Config----------------------------
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
