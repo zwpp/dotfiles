@@ -77,8 +77,15 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
+let g:neocomplete#keyword_patterns.c = '\h\w*\|#\w*'
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+"inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "\<CR>"
 
 let $DOTVIM = $HOME . '/.vim'
 " Define dictionary.
@@ -89,6 +96,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ }
 
 autocmd FileType c set dictionary='~/.vim/dict/c.dict'
+autocmd FileType c set omnifunc=ccomplete#Complete
 "NeoSnippet.Config----------------------------
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
@@ -111,6 +119,9 @@ if has('conceal')
 endif
 let s:my_snippet = '~/.vim/mysnippet/'
 let g:neosnippet#snippets_directory = s:my_snippet
+let g:neocomplete#sources#include#paths ={
+			\ 'cpp':  '.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/',
+\}
 "StargateInclude.Config---------------------------
 NeoBundle 'osyo-manga/vim-stargate'
 let g:stargate#include_paths = {
