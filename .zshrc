@@ -43,6 +43,7 @@ if [ $TERM = "linux" ] ; then
 fi
 # $PATH設定
 export PATH=$PATH:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:/opt/etrobo/bin
+export PATH="$HOME/local:$PATH"
 
 ########補完機能########
 #補完メッセージ
