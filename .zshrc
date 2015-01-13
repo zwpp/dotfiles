@@ -42,7 +42,7 @@ if [ $TERM = "linux" ] ; then
     export LANG=ja_JP.UTF-8
 fi
 # $PATH設定
-export PATH=$PATH:/opt/android-sdk-linux/platform-tools:/opt/etrobo/bin
+export PATH=$PATH:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:/opt/etrobo/bin
 
 ########補完機能########
 #補完メッセージ
