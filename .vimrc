@@ -131,6 +131,17 @@ NeoBundle 'osyo-manga/vim-stargate'
 let g:stargate#include_paths = {
 \		"c":[
 \			"/home/zw/ETrobo/nxtOSEK/ecrobot/c"
+\		],
+\		"cpp":[
+\			"/usr/include/c++/4.6",
+\			"/usr/include/c++/4.6/x86_64-linux-gnu",
+\			"/usr/include/c++/4.6/backward",
+\			"/usr/local/include",
+\			"/usr/include/x86_64-linux-gnu",
+\			"/usr/include",
+\			"/usr/include/clang/3.0/include/",
+\			"/usr/lib/gcc/x86_64-linux-gnu/4.6/include/",
+\			"/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/"
 \		]
 \}
 "Unite.config-------------------------------------
