@@ -16,6 +16,7 @@ HISTFILE=~/.history_zsh
 HISTSIZE=10000000
 SAVEHIST=$HISTSIZE
 setopt hist_ignore_dups
+setopt hist_ignore_space
 
 zshaddhistory() {
 	local line=${1%%$'\n'}
