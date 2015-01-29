@@ -14,3 +14,14 @@ map <3-MiddleMouse> <Nop>
 imap <3-MiddleMouse> <Nop>
 map <4-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
+"スクロールバー消し
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+"メニューバー消し
+set guioptions-=m
+"ツールバー消し
+set guioptions-=T
+
+set ambiwidth=double
