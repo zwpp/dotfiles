@@ -124,7 +124,7 @@ endif
 let s:my_snippet = '~/.vim/mysnippet/'
 let g:neosnippet#snippets_directory = s:my_snippet
 let g:neocomplete#sources#include#paths ={
-			\ 'cpp':  '.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/',
+			\ 'cpp':  '.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/,/usr/include/qt4/QtCore,/usr/include/qt4/QtGui,/usr/include/qt4'
 \}
 "StargateInclude.Config---------------------------
 NeoBundle 'osyo-manga/vim-stargate'
@@ -141,7 +141,10 @@ let g:stargate#include_paths = {
 \			"/usr/include",
 \			"/usr/include/clang/3.0/include/",
 \			"/usr/lib/gcc/x86_64-linux-gnu/4.6/include/",
-\			"/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/"
+\			"/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/",
+\			"/usr/include/qt4/QtCore",
+\			"/usr/include/qt4/QtGui",
+\			"/usr/include/qt4"
 \		]
 \}
 "Unite.config-------------------------------------
