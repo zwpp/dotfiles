@@ -1,17 +1,17 @@
 # config:UTF-8
 # Created by newuser for 4.3.17
 
-########$B%3%b%s$J@_Dj(B########
-#$BK\BN$N@_Dj(B
+########コモンな設定########
+#本体の設定
 setopt NO_beep
-#less$B$K?'$rIU$1$k(B
+#lessに色を付ける
 export LESS='-R'
-#$B%(%$%j%"%9$?$A(B
+#エイリアスたち
 alias ls="ls --color=auto"
 alias ll="ls -l"
 alias la="ls -a"
 alias vi="vim"
-#$B%3%^%s%IMzNr(B
+#コマンド履歴
 HISTFILE=~/.history_zsh
 HISTSIZE=10000000
 SAVEHIST=$HISTSIZE
@@ -22,7 +22,7 @@ zshaddhistory() {
 	local line=${1%%$'\n'}
 	local cmd=${line%% *}
 
-    # $B0J2<$N>r7o$r$9$Y$FK~$?$9$b$N$@$1$r%R%9%H%j$KDI2C$9$k(B
+    # 以下の条件をすべて満たすものだけをヒストリに追加する
 	[[ ${cmd} != (l|l[sal])
 #		&& ${cmd} != (c|cd)
 		&& ${cmd} != (m|man)
@@ -31,40 +31,40 @@ zshaddhistory() {
 }
 
 setopt correct
-########$B4D6-JQ?t@_Dj(B########
-# $TERM$B56Au!#%U%k%+%i!<2=!#(Bfxxkin gterm
+########環境変数設定########
+# $TERM偽装。フルカラー化。fxxkin gterm
 if [ $TERM = "xterm" ] ; then
     export TERM="xterm-256color"
 fi
-# $LANG$B@_Dj(B
+# $LANG設定
 if [ $TERM = "linux" ] ; then
     export LANG="C"
   else
     export LANG=ja_JP.UTF-8
 fi
-# $PATH$B@_Dj(B
+# $PATH設定
 export PATH=$PATH:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:/opt/etrobo/bin
 export PATH="$HOME/local:$PATH"
 
-########$BJd405!G=(B########
-#$BJd40%a%C%;!<%8(B
+########補完機能########
+#補完メッセージ
 zstyle ':completion:*' format '%F{123}Completing %B%d%b%f'
 zstyle ':completion:*' group-name ''
 
-#ssh$B%[%9%HL>Jd40(B
+#sshホスト名補完
 _cache_hosts=(`ruby -ne 'if /^Host\s+(.+)$/; print $1.strip, "\n"; end' ~/.ssh/config`)
-#$B%f!<%6!<Jd404X?tCV$->l(B
+#ユーザー補完関数置き場
 fpath=(~/.zsh/completion $fpath)
 
-#$BJd405!G=M-8z2=(B
+#補完機能有効化
 autoload -U compinit
 compinit
 
-########$BI=<(ItJ,(B########
-#$B%+%i%U%k$K$9$k!#(B
+########表示部分########
+#カラフルにする。
 autoload colors
 colors
-#$B%W%m%s%W%H%U%)!<%^%C%H(B
+#プロンプトフォーマット
 local p_dir="%F{117}[%~]%f%b"$'\n'
 local p_info="%n@%m"
 local p_mark="%(?,%F{121},%F{214})%B%(!,#,$)%b%f "
@@ -79,7 +79,7 @@ kterm*|xterm*)
 	;;
 esac
 
-########$BA`:nJ}K!(B########
+########操作方法########
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
