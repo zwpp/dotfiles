@@ -191,3 +191,7 @@ let g:marching_enable_neocomplete = 1
 let g:neocomplete#force_omni_input_patterns.cpp =
     \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
+NeoBundle 'dart-lang/dart-vim-plugin'
+
+NeoBundle 'shiracamus/vim-syntax-x86-objdump-d'
+
