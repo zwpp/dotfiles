@@ -78,6 +78,7 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
 let g:neocomplete#keyword_patterns.c = '\h\w*\|#\w*'
+let g:neocomplete#auto_completion_start_length = 3
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
