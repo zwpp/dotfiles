@@ -7,6 +7,7 @@ setopt NO_beep
 #lessに色を付ける
 export LESS='-R'
 #エイリアスたち
+alias l="ls"
 alias ls="ls --color=auto"
 alias ll="ls -l"
 alias la="ls -a"
@@ -31,8 +32,13 @@ zshaddhistory() {
 }
 
 setopt correct
+
+######## RVM    ########
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 ########環境変数設定########
-# $TERM偽装。フルカラー化。fxxkin gterm
+# $TERM偽装。フルカラー化。
 if [ $TERM = "xterm" ] ; then
     export TERM="xterm-256color"
 fi
@@ -52,7 +58,10 @@ zstyle ':completion:*' format '%F{123}Completing %B%d%b%f'
 zstyle ':completion:*' group-name ''
 
 #sshホスト名補完
-_cache_hosts=(`ruby -ne 'if /^Host\s+(.+)$/; print $1.strip, "\n"; end' ~/.ssh/config`)
+if [ -r ~/.ssh/config ]; then
+	_cache_hosts=(`ruby -ne 'if /^Host\s+(.+)$/; print $1.strip, "\n"; end' ~/.ssh/config`)
+	#_cache_hosts=(`grep 'Host\s' ~/.ssh/config |  sed -e 's:^Host\s\(\S\+\)\s*$:\1:g'`)
+fi
 #ユーザー補完関数置き場
 fpath=(~/.zsh/completion $fpath)
 
@@ -81,7 +90,4 @@ esac
 
 ########操作方法########
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
