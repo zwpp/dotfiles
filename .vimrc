@@ -18,7 +18,7 @@ set incsearch
 set hlsearch
 "ファイル処理----------------------------------
 set encoding=utf-8
-set fileencodings=ucs-bom,iso-2022-jp,utf-8,cp932,euc-jp,default,latin,iso-8851
+set fileencodings=ucs-bom,utf-8,iso-2022-jp,cp932,euc-jp,default,latin,iso-8851
 set fileencoding=utf-8
 "set backupdir=$HOME/.vim/backup
 set nobackup
