@@ -100,6 +100,9 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 
 autocmd FileType c set dictionary='~/.vim/dict/c.dict'
 autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType whitespace set nolist
+autocmd FileType whitespace set nocursorline
+autocmd FileType whitespace set nocursorcolumn
 
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
