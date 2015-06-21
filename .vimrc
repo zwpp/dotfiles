@@ -90,7 +90,9 @@ filetype plugin indent on
 NeoBundleCheck
 " End NeoBundle Scripts-------------------------
 " }}}
-" NeoComplete  {{{
+let $DOTVIM = $HOME . '/.vim'
+set path=.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/,/usr/include/qt4/QtCore,/usr/include/qt4/QtGui,/usr/include/qt4,/home/zw/ETrobo/ev3rt-beta5-release/hrp2/workspace/common/lib/libcpp-ev3/include
+" NeoComplete{{{
 
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_ignore_case = 1
@@ -105,19 +107,18 @@ if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-" Plugin keymap
+" Plugin keymap"{{{
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
-" inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "\<CR>"
+" inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "\<CR>""}}}
 
-let $DOTVIM = $HOME . '/.vim'
-" Define dictionary.
+" Define dictionary."{{{
 let g:neocomplete#sources#dictionary#dictionaries = {
 \		'default' : '',
 \		'c' : $DOTVIM.'/dict/c.dict',
 \		'ruby' : $DOTVIM.'/dict/ruby.dict',
-\	}
+\	}"}}}
 
 autocmd FileType c set dictionary='~/.vim/dict/c.dict'
 autocmd FileType c set omnifunc=ccomplete#Complete
@@ -127,29 +128,29 @@ autocmd FileType whitespace set nocursorcolumn
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " }}}
-" NeoSnippet-----------------------------------
-" Plugin key-mappings.
+" NeoSnippet{{{
+" Plugin key-mappings."{{{
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+"}}}
 
-" SuperTab like snippets behavior.
+" SuperTab like snippets behavior.{{{
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
-
-" For snippet_complete marker.
+"}}}
+" For snippet_complete marker."{{{
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
-
-set path=.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/,/usr/include/qt4/QtCore,/usr/include/qt4/QtGui,/usr/include/qt4,/home/zw/ETrobo/ev3rt-beta5-release/hrp2/workspace/common/lib/libcpp-ev3/include
-
+"}}}
 let s:my_snippet = '~/.vim/mysnippet/'
 let g:neosnippet#snippets_directory = s:my_snippet
+"}}}
 " dust {{{
 " let g:neocomplete#sources#include#paths ={
 " \ 'cpp':  '.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/,/usr/include/qt4/QtCore,/usr/include/qt4/QtGui,/usr/include/qt4,/home/zw/ETrobo/ev3rt-beta5-release/hrp2/workspace/common/lib/libcpp-ev3/include'
@@ -176,20 +177,18 @@ let g:neosnippet#snippets_directory = s:my_snippet
 " \		]
 " \}
 " }}}
-" Unite.config-------------------------------------
-
-" mikutter_mode------------------------------------
-
-" Quickrun-----------------------------------------
+" Quickrun{{{
 let g:quickrun_config = {
 \   '*': {'runmode': 'async:remote:vimproc'},
 \ }
-"lightline----------------------------------------
+"}}}
+"lightline{{{
 let g:lightline = {
 \			'separator': { 'left': "\u2b80", 'right': "\u2b82" },
 \			'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
 \}
-" incsearch----------------------------------------
+"}}}
+" incsearch{{{
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
@@ -200,10 +199,8 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
-
-" vim-ruby-----------------------------------------
-" JP-doc-------------------------------------------
-
+"}}}
+" vim-marching"{{{
 NeoBundleLazy 'osyo-manga/vim-marching', {
 \			  'depends' : ['Shougo/vimproc.vim', 'osyo-manga/vim-reunions'],
 \			  'autoload' : {'filetypes' : ['c', 'cpp']}
@@ -212,7 +209,8 @@ NeoBundleLazy 'osyo-manga/vim-marching', {
 let g:marching_enable_neocomplete = 1
 let g:neocomplete#force_omni_input_patterns.cpp =
 \		'[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-
+"}}}
+" Vinarise{{{
 let g:vinarise_enable_auto_detect = 1
-
+"}}}
 " vim:set ts=4 sw=4 ft=vim fenc=utf-8 foldmethod=marker :
