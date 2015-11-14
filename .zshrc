@@ -33,7 +33,7 @@ zshaddhistory() {
 
 setopt correct
 
-######## RVM    ########
+########   rbebv    ########
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
@@ -56,7 +56,8 @@ export PATH="$HOME/local:$PATH"
 #補完メッセージ
 zstyle ':completion:*' format '%F{123}Completing %B%d%b%f'
 zstyle ':completion:*' group-name ''
-
+#大文字小文字を区別しない
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #sshホスト名補完
 if [ -r ~/.ssh/config ]; then
 	_cache_hosts=(`ruby -ne 'if /^Host\s+(.+)$/; print $1.strip, "\n"; end' ~/.ssh/config`)
@@ -81,7 +82,7 @@ PROMPT="$p_dir$p_info $p_mark"
 PROMPT2="$p_info $p_mark >"
 SPROMPT="%R -> %r ? (y/n/a/e): "
 case "${TERM}" in
-kterm*|xterm*)
+kterm*|xterm*|rxvt*)
 	precmd() {
 		echo -ne "\033]0;${USER}@${HOST}\007"
 	}
@@ -90,4 +91,4 @@ esac
 
 ########操作方法########
 
-
+return 0
