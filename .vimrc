@@ -1,4 +1,5 @@
 set nocompatible	" vi互換の排除
+set re=1
 " 画面表示 {{{
 syntax on	" 色分け
 set number	" 行番号
@@ -7,7 +8,7 @@ set tabstop=4
 " colorscheme railscasts
 colorscheme molokai
 set list
-set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+let &listchars="tab:\u21e5 ,trail:\u02fd,eol:\u21b2,extends:»,precedes:«,nbsp:%"
 set cursorline
 set cursorcolumn
 set ambiwidth=double
@@ -66,7 +67,8 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'osyo-manga/vim-stargate'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
-NeoBundle '2GMon/mikutter_mode.vim'
+"NeoBundle '2GMon/mikutter_mode.vim'
+NeoBundle 'zwpp/mikutter_mode.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'haya14busa/incsearch.vim'
@@ -75,6 +77,9 @@ NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'dart-lang/dart-vim-plugin'
 NeoBundle 'shiracamus/vim-syntax-x86-objdump-d'
 NeoBundle 'Shougo/vinarise'
+NeoBundle 'Shougo/vimproc.vim', {'build' : { 'linux' : 'make' } }
+NeoBundle 'surround.vim'
+
 " }}}
 " You can specify revision/branch/tag.
 " NeoBundle Shougo/vimshell, { rev : 3787e5 }
@@ -91,7 +96,7 @@ NeoBundleCheck
 " End NeoBundle Scripts-------------------------
 " }}}
 let $DOTVIM = $HOME . '/.vim'
-set path=.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/,/usr/include/qt4/QtCore,/usr/include/qt4/QtGui,/usr/include/qt4,/home/zw/ETrobo/ev3rt-beta5-release/hrp2/workspace/common/lib/libcpp-ev3/include
+set path=.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/,/usr/include/qt4/QtCore,/usr/include/qt4/QtGui,/usr/include/qt4,/home/zw/ETrobo/ev3rt-beta5-1-release/hrp2/workspace/common/lib/libcpp-ev3/include,/home/zw/ETrobo/ev3rt-beta5-1-release/hrp2/target/ev3_gcc/api/include
 " NeoComplete{{{
 
 let g:neocomplete#enable_at_startup = 1
@@ -181,6 +186,9 @@ let g:neosnippet#snippets_directory = s:my_snippet
 let g:quickrun_config = {
 \   '*': {'runmode': 'async:remote:vimproc'},
 \ }
+let g:quickrun_config.cpp = {
+\   'cmdopt': '-std=c++11'
+\ }
 "}}}
 "lightline{{{
 let g:lightline = {
@@ -207,6 +215,11 @@ NeoBundleLazy 'osyo-manga/vim-marching', {
 \			  }
 " use with NeoComplete
 let g:marching_enable_neocomplete = 1
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+
 let g:neocomplete#force_omni_input_patterns.cpp =
 \		'[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 "}}}
