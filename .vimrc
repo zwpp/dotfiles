@@ -1,5 +1,5 @@
 set nocompatible	" vi互換の排除
-set re=1
+set re=1 " syntax highlightが重くならないための設定
 " 画面表示 {{{
 syntax on	" 色分け
 set number	" 行番号
