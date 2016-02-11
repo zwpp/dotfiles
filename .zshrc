@@ -1,6 +1,20 @@
 # config:UTF-8
 # Created by newuser for 4.3.17
 
+############zplug###########
+source ~/.zplug/zplug
+zplug "zsh-users/zsh-syntax-highlighting", nice:19
+zplug "plugins/git",   from:oh-my-zsh, if:"which git"
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load --verbose
+
 ########コモンな設定########
 #本体の設定
 setopt NO_beep
