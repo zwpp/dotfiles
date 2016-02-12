@@ -2,6 +2,8 @@
 # Created by newuser for 4.3.17
 
 ############zplug###########
+if [ -f "$HOME/.zplug/zplug" ]; then
+
 source ~/.zplug/zplug
 zplug "zsh-users/zsh-syntax-highlighting", nice:19
 zplug "plugins/git",   from:oh-my-zsh, if:"which git"
@@ -14,6 +16,8 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
+
+fi
 
 ########コモンな設定########
 #本体の設定
