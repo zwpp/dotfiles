@@ -52,8 +52,10 @@ zshaddhistory() {
 setopt correct
 
 ########   rbebv    ########
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -d "$HOME/.rbenv" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 ########環境変数設定########
 # $TERM偽装。フルカラー化。
