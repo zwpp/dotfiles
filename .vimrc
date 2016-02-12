@@ -1,20 +1,5 @@
 set nocompatible	" vi互換の排除
 set re=1 " syntax highlightが重くならないための設定
-" 画面表示 {{{
-syntax on	" 色分け
-set number	" 行番号
-set shiftwidth=4
-set tabstop=4
-" colorscheme railscasts
-colorscheme molokai
-set list
-let &listchars="tab:\u21e5 ,trail:\u02fd,eol:\u21b2,extends:»,precedes:«,nbsp:%"
-set cursorline
-set cursorcolumn
-set ambiwidth=double
-set showcmd
-set laststatus=2
-" }}}
 " 検索 {{{
 set incsearch
 set hlsearch
@@ -94,6 +79,21 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 " End NeoBundle Scripts-------------------------
+" }}}
+" 画面表示 {{{
+syntax on	" 色分け
+set number	" 行番号
+set shiftwidth=4
+set tabstop=4
+" colorscheme railscasts
+colorscheme molokai
+set list
+let &listchars="tab:\u21e5 ,trail:\u02fd,eol:\u21b2,extends:»,precedes:«,nbsp:%"
+set cursorline
+set cursorcolumn
+set ambiwidth=double
+set showcmd
+set laststatus=2
 " }}}
 let $DOTVIM = $HOME . '/.vim'
 set path=.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/,/usr/include/qt4/QtCore,/usr/include/qt4/QtGui,/usr/include/qt4,/home/zw/ETrobo/ev3rt-beta5-1-release/hrp2/workspace/common/lib/libcpp-ev3/include,/home/zw/ETrobo/ev3rt-beta5-1-release/hrp2/target/ev3_gcc/api/include
