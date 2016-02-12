@@ -64,6 +64,10 @@ NeoBundle 'shiracamus/vim-syntax-x86-objdump-d'
 NeoBundle 'Shougo/vinarise'
 NeoBundle 'Shougo/vimproc.vim', {'build' : { 'linux' : 'make' } }
 NeoBundle 'surround.vim'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-operator-user'
+NeoBundle 'kana/vim-textobj-line'
+NeoBundle 'emonkak/vim-operator-comment'
 
 " }}}
 " You can specify revision/branch/tag.
