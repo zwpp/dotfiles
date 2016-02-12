@@ -1,4 +1,4 @@
-# config:UTF-8
+# vim: set expandtab : 
 # Created by newuser for 4.3.17
 
 ############zplug###########
@@ -38,15 +38,15 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 
 zshaddhistory() {
-	local line=${1%%$'\n'}
-	local cmd=${line%% *}
+    local line=${1%%$'\n'}
+    local cmd=${line%% *}
 
     # 以下の条件をすべて満たすものだけをヒストリに追加する
-	[[ ${cmd} != (l|l[sal])
-#		&& ${cmd} != (c|cd)
-		&& ${cmd} != (m|man)
-		&& ${cmd} != (qrencode)
-	]]
+    [[ ${cmd} != (l|l[sal])
+#   && ${cmd} != (c|cd)
+    && ${cmd} != (m|man)
+    && ${cmd} != (qrencode)
+    ]]
 }
 
 setopt correct
@@ -65,7 +65,7 @@ fi
 # $LANG設定
 if [ $TERM = "linux" ] ; then
     export LANG="C"
-  else
+else
     export LANG=ja_JP.UTF-8
 fi
 # $PATH設定
@@ -80,8 +80,8 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #sshホスト名補完
 if [ -r ~/.ssh/config ]; then
-	_cache_hosts=(`ruby -ne 'if /^Host\s+(.+)$/; print $1.strip, "\n"; end' ~/.ssh/config`)
-	#_cache_hosts=(`grep 'Host\s' ~/.ssh/config |  sed -e 's:^Host\s\(\S\+\)\s*$:\1:g'`)
+    _cache_hosts=(`ruby -ne 'if /^Host\s+(.+)$/; print $1.strip, "\n"; end' ~/.ssh/config`)
+    #_cache_hosts=(`grep 'Host\s' ~/.ssh/config |  sed -e 's:^Host\s\(\S\+\)\s*$:\1:g'`)
 fi
 #ユーザー補完関数置き場
 fpath=(~/.zsh/completion $fpath)
@@ -102,11 +102,11 @@ PROMPT="$p_dir$p_info $p_mark"
 PROMPT2="$p_info $p_mark >"
 SPROMPT="%R -> %r ? (y/n/a/e): "
 case "${TERM}" in
-kterm*|xterm*|rxvt*)
-	precmd() {
-		echo -ne "\033]0;${USER}@${HOST}\007"
-	}
-	;;
+    kterm*|xterm*|rxvt*)
+        precmd() {
+            echo -ne "\033]0;${USER}@${HOST}\007"
+        }
+        ;;
 esac
 
 ########操作方法########
