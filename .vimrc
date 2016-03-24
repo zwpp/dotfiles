@@ -161,32 +161,6 @@ endif
 let s:my_snippet = '~/.vim/mysnippet/'
 let g:neosnippet#snippets_directory = s:my_snippet
 "}}}
-" dust {{{
-" let g:neocomplete#sources#include#paths ={
-" \ 'cpp':  '.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/,/usr/include/qt4/QtCore,/usr/include/qt4/QtGui,/usr/include/qt4,/home/zw/ETrobo/ev3rt-beta5-release/hrp2/workspace/common/lib/libcpp-ev3/include'
-" \}
-" "StargateInclude.Config---------------------------
-" let g:stargate#include_paths = {
-" \		"c":[
-" \			"/home/zw/ETrobo/nxtOSEK/ecrobot/c"
-" \		],
-" \		"cpp":[
-" \			"/usr/include/c++/4.6",
-" \			"/usr/include/c++/4.6/x86_64-linux-gnu",
-" \			"/usr/include/c++/4.6/backward",
-" \			"/usr/local/include",
-" \			"/usr/include/x86_64-linux-gnu",
-" \			"/usr/include",
-" \			"/usr/include/clang/3.0/include/",
-" \			"/usr/lib/gcc/x86_64-linux-gnu/4.6/include/",
-" \			"/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/",
-" \			"/usr/include/qt4/QtCore",
-" \			"/usr/include/qt4/QtGui",
-" \			"/home/zw/ETrobo/ev3rt-beta5-release/hrp2/workspace/common/lib/libcpp-ev3/include",
-" \			"/usr/include/qt4"
-" \		]
-" \}
-" }}}
 " Quickrun{{{
 let g:quickrun_config = {
 \   '*': {'runmode': 'async:remote:vimproc'},
