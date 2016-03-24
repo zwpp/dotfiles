@@ -68,6 +68,7 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'kana/vim-textobj-line'
 NeoBundle 'emonkak/vim-operator-comment'
+NeoBundle 'ngmy/vim-rubocop'
 
 " }}}
 " You can specify revision/branch/tag.
