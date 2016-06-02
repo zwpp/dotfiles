@@ -101,7 +101,9 @@ set showcmd
 set laststatus=2
 " }}}
 let $DOTVIM = $HOME . '/.vim'
-set path=.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/,/usr/include/qt4/QtCore,/usr/include/qt4/QtGui,/usr/include/qt4,/home/zw/ETrobo/ev3rt-beta5-1-release/hrp2/workspace/common/lib/libcpp-ev3/include,/home/zw/ETrobo/ev3rt-beta5-1-release/hrp2/target/ev3_gcc/api/include
+set path+=.,/usr/include/c++/4.6,/usr/include/c++/4.6/x86_64-linux-gnu,/usr/include/c++/4.6/backward,/usr/local/include,/usr/include/x86_64-linux-gnu,/usr/include,/usr/include/clang/3.0/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include/,/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed/
+set path+=/usr/include/qt4/QtCore,/usr/include/qt4/QtGui,/usr/include/qt4
+set path+=/home/zw/ETrobo/ev3rt/hrp2/workspace/common/lib/libcpp-ev3/include,/home/zw/ETrobo/ev3rt/hrp2/target/ev3_gcc/api/include
 " NeoComplete{{{
 
 let g:neocomplete#enable_at_startup = 1
