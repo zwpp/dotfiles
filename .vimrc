@@ -207,4 +207,9 @@ let g:neocomplete#force_omni_input_patterns.cpp =
 " Vinarise{{{
 let g:vinarise_enable_auto_detect = 1
 "}}}
+" Gist.vim{{{
+let g:gist_detect_filetype = 1
+
+"}}}
+
 " vim:set ts=4 sw=4 ft=vim fenc=utf-8 foldmethod=marker :
