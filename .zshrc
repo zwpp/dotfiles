@@ -27,7 +27,7 @@ if [ -d "$HOME/.rbenv" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
-
+export PATH=$PATH":/home/zw/.gem/ruby/2.3.0/bin"
 ########環境変数設定########
 # $TERM偽装。フルカラー化。
 if [ $TERM = "xterm" ] ; then
