@@ -110,4 +110,9 @@ fi
 zplug load --verbose
 
 fi
+########yaourt#######
+if which yaourt >/dev/null; then
+    export VISUAL="vim"
+fi
+
 return 0
