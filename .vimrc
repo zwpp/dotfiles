@@ -69,7 +69,6 @@ NeoBundle 'kana/vim-operator-user'
 NeoBundle 'kana/vim-textobj-line'
 NeoBundle 'emonkak/vim-operator-comment'
 NeoBundle 'ngmy/vim-rubocop'
-
 " }}}
 " You can specify revision/branch/tag.
 " NeoBundle Shougo/vimshell, { rev : 3787e5 }
@@ -168,7 +167,7 @@ let g:quickrun_config = {
 \   '*': {'runmode': 'async:remote:vimproc'},
 \ }
 let g:quickrun_config.cpp = {
-\   'cmdopt': '-std=c++11'
+\   'cmdopt': '-std=c++14'
 \ }
 "}}}
 "lightline{{{
