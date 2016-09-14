@@ -20,18 +20,6 @@ SAVEHIST=$HISTSIZE
 setopt hist_ignore_dups
 setopt hist_ignore_space
 
-zshaddhistory() {
-    local line=${1%%$'\n'}
-    local cmd=${line%% *}
-
-    # 以下の条件をすべて満たすものだけをヒストリに追加する
-    [[ ${cmd} != (l|l[sal])
-#   && ${cmd} != (c|cd)
-    && ${cmd} != (m|man)
-    && ${cmd} != (qrencode)
-    ]]
-}
-
 setopt correct
 
 ########   rbebv    ########
