@@ -112,5 +112,11 @@ case "${TERM}" in
 esac
 
 ########操作方法########
+connect() {
+    xrandr --output LVDS1 --off --output VGA1 --auto --right-of DP2 --output DP2 --rotate right --auto
+}
+disconnect() {
+    xrandr  --output VGA1 --off --output DP2 --off --output LVDS1 --auto
+}
 
 return 0
