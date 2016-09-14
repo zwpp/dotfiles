@@ -88,6 +88,10 @@ disconnect() {
     xrandr  --output VGA1 --off --output DP2 --off --output LVDS1 --auto
 }
 
+########golang########
+export GOPATH=~/go
+export PATH=$PATH:~/go/bin
+
 ############zplug###########
 if [ -f "$HOME/.zplug/zplug" ]; then
 
