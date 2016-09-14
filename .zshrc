@@ -1,25 +1,6 @@
 # vim: set expandtab : 
 # Created by newuser for 4.3.17
 
-############zplug###########
-if [ -f "$HOME/.zplug/zplug" ]; then
-
-source ~/.zplug/zplug
-zplug "zsh-users/zsh-syntax-highlighting", nice:19
-zplug "plugins/git",   from:oh-my-zsh, if:"which git"
-zplug "plugins/ruby",   from:oh-my-zsh, if:"which ruby"
-
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load --verbose
-
-fi
-
 ########コモンな設定########
 #本体の設定
 setopt NO_beep
@@ -119,4 +100,22 @@ disconnect() {
     xrandr  --output VGA1 --off --output DP2 --off --output LVDS1 --auto
 }
 
+############zplug###########
+if [ -f "$HOME/.zplug/zplug" ]; then
+
+source ~/.zplug/zplug
+zplug "zsh-users/zsh-syntax-highlighting", nice:19
+zplug "plugins/git",   from:oh-my-zsh, if:"which git"
+zplug "plugins/ruby",   from:oh-my-zsh, if:"which ruby"
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load --verbose
+
+fi
 return 0
