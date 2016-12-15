@@ -23,11 +23,13 @@ setopt hist_ignore_space
 setopt correct
 
 ########   rbebv    ########
-if [ -d "$HOME/.rbenv" ]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
+if which ruby >/dev/null; then
+    if [ -d "$HOME/.rbenv" ]; then
+        export PATH="$HOME/.rbenv/bin:$PATH"
+        eval "$(rbenv init -)"
+    fi
+    export PATH="$PATH:/home/zw/.gem/ruby/$(ruby -e 'print RUBY_VERSION')/bin"
 fi
-export PATH=$PATH":/home/zw/.gem/ruby/2.3.0/bin"
 ########環境変数設定########
 # $TERM偽装。フルカラー化。
 if [ $TERM = "xterm" ] ; then
@@ -89,8 +91,10 @@ disconnect() {
 }
 
 ########golang########
-export GOPATH=~/go
-export PATH=$PATH:~/go/bin
+if [ -d "$HOME/go" ]; then
+    export GOPATH=~/go
+    export PATH=$PATH:~/go/bin
+fi
 
 ############zplug###########
 if [ -f "$HOME/.zplug/init.zsh" ]; then
