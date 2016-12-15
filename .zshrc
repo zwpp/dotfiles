@@ -40,7 +40,7 @@ else
     export LANG=ja_JP.UTF-8
 fi
 # $PATH設定
-export PATH=$PATH:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:/opt/etrobo/bin
+export PATH=$PATH:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools
 export PATH="$HOME/local:$PATH"
 
 ########補完機能########
@@ -95,19 +95,19 @@ export PATH=$PATH:~/go/bin
 ############zplug###########
 if [ -f "$HOME/.zplug/init.zsh" ]; then
 
-source ~/.zplug/init.zsh
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "plugins/git",   from:oh-my-zsh, if:"which git"
-zplug "plugins/ruby",   from:oh-my-zsh, if:"which ruby"
+    source ~/.zplug/init.zsh
+    zplug "zsh-users/zsh-syntax-highlighting", defer:2
+    zplug "plugins/git",   from:oh-my-zsh, if:"which git"
+    zplug "plugins/ruby",   from:oh-my-zsh, if:"which ruby"
 
-if ! zplug check; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
+    if ! zplug check; then
+        printf "Install? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        fi
     fi
-fi
 
-zplug load
+    zplug load
 
 fi
 ########yaourt#######
