@@ -28,7 +28,7 @@ if which ruby >/dev/null; then
         export PATH="$HOME/.rbenv/bin:$PATH"
         eval "$(rbenv init -)"
     fi
-    export PATH="$PATH:/home/zw/.gem/ruby/$(ruby -e 'print RUBY_VERSION')/bin"
+    path+=( $(ruby -e'print Gem.path.map {|p| p + "/bin"}.join(" ")') )
 fi
 # }}}
 ########環境変数設定######## {{{
