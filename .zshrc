@@ -1,7 +1,7 @@
-# vim: set expandtab : 
+# vim: set expandtab foldmethod=marker: 
 # Created by newuser for 4.3.17
 
-########コモンな設定########
+########コモンな設定######## {{{
 #本体の設定
 setopt NO_beep
 #lessに色を付ける
@@ -21,8 +21,8 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 
 setopt correct
-
-########   rbebv    ########
+# }}}
+########   rbebv    ######## {{{
 if which ruby >/dev/null; then
     if [ -d "$HOME/.rbenv" ]; then
         export PATH="$HOME/.rbenv/bin:$PATH"
@@ -30,7 +30,8 @@ if which ruby >/dev/null; then
     fi
     export PATH="$PATH:/home/zw/.gem/ruby/$(ruby -e 'print RUBY_VERSION')/bin"
 fi
-########環境変数設定########
+# }}}
+########環境変数設定######## {{{
 # $TERM偽装。フルカラー化。
 if [ $TERM = "xterm" ] ; then
     export TERM="xterm-256color"
@@ -44,8 +45,8 @@ fi
 # $PATH設定
 export PATH=$PATH:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools
 export PATH="$HOME/local:$PATH"
-
-########補完機能########
+# }}}
+########補完機能######## {{{
 #補完メッセージ
 zstyle ':completion:*' format '%F{123}Completing %B%d%b%f'
 zstyle ':completion:*' group-name ''
@@ -62,8 +63,8 @@ fpath=(~/.zsh/completion $fpath)
 #補完機能有効化
 autoload -U compinit
 compinit
-
-########表示部分########
+# }}}
+########表示部分######## {{{
 #カラフルにする。
 autoload colors
 colors
@@ -81,22 +82,22 @@ case "${TERM}" in
         }
         ;;
 esac
-
-########操作方法########
+# }}}
+########操作方法######## {{{
 connect() {
     xrandr --output LVDS1 --off --output VGA1 --auto --right-of DP2 --output DP2 --rotate right --auto
 }
 disconnect() {
     xrandr  --output VGA1 --off --output DP2 --off --output LVDS1 --auto
 }
-
-########golang########
+# }}}
+########golang######## {{{
 if [ -d "$HOME/go" ]; then
     export GOPATH=~/go
     export PATH=$PATH:~/go/bin
 fi
-
-############zplug###########
+# }}}
+############zplug########### {{{
 if [ -f "$HOME/.zplug/init.zsh" ]; then
 
     source ~/.zplug/init.zsh
@@ -114,9 +115,11 @@ if [ -f "$HOME/.zplug/init.zsh" ]; then
     zplug load
 
 fi
-########yaourt#######
+# }}}
+########yaourt####### {{{
 if which yaourt >/dev/null; then
     export VISUAL="vim"
 fi
+# }}}
 
 return 0
