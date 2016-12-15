@@ -6,7 +6,10 @@ do
     ln -s $HOME/dotfiles/$file $HOME/$file
 done
 #install zplug
-git clone https://github.com/b4b4r07/zplug ~/.zplug
+
+if which zsh >/dev/null ;then
+  curl -sL zplug.sh/installer | zsh
+fi
 
 #install neobundle if has vim
 if which vim >/dev/null ;then

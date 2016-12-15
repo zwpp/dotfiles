@@ -93,10 +93,10 @@ export GOPATH=~/go
 export PATH=$PATH:~/go/bin
 
 ############zplug###########
-if [ -f "$HOME/.zplug/zplug" ]; then
+if [ -f "$HOME/.zplug/init.zsh" ]; then
 
-source ~/.zplug/zplug
-zplug "zsh-users/zsh-syntax-highlighting", nice:19
+source ~/.zplug/init.zsh
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "plugins/git",   from:oh-my-zsh, if:"which git"
 zplug "plugins/ruby",   from:oh-my-zsh, if:"which ruby"
 
