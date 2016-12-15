@@ -100,14 +100,14 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "plugins/git",   from:oh-my-zsh, if:"which git"
 zplug "plugins/ruby",   from:oh-my-zsh, if:"which ruby"
 
-if ! zplug check --verbose; then
+if ! zplug check; then
     printf "Install? [y/N]: "
     if read -q; then
         echo; zplug install
     fi
 fi
 
-zplug load --verbose
+zplug load
 
 fi
 ########yaourt#######
