@@ -20,6 +20,7 @@ set timeoutlen=100
 set vb t_vb=
 set backspace=indent,eol,start
 set ignorecase
+set hidden
 imap <F1> <Esc>
 map <F1> <Esc>
 "}}}
