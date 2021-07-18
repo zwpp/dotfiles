@@ -8,7 +8,7 @@ done
 #install zplug
 
 if which zsh >/dev/null ;then
-  curl -sL zplug.sh/installer | zsh
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 
 #install neobundle if has vim
