@@ -1,5 +1,5 @@
-#!/bin/sh
-DOT_FILES=( .Xmodmap .vimrc .gvimrc .vim .zshrc .gitconfig .zsh)
+#!/bin/bash
+DOT_FILES=(.Xmodmap .vimrc .gvimrc .vim .zshrc .gitconfig .zsh)
 
 for file in ${DOT_FILES[@]}
 do
